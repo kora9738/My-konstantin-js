@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script type="text/javascript" src="tic-tac-toe.js"></script>
+    <script type="text/javascript" src="tic-tac-toe-ai.js"></script>
+    <script type="text/javascript" src="init-tic-tac-toe.js"></script>
+    <title>TicTacToe</title>
+  </head>
+
+  <body onload="initTTT()">
+    <div class="tic-tac-toe">
+      <div class="prompt"></div>
+      <div class="grid">
+        <div class="field field--circle"></div>
+        <div class="field field--cross"></div>
+        <div class="field field--circle field--won"></div>
+        <div class="field field--cross field--won"></div>
+        <div class="field"></div>
+        <div class="field"></div>
+        <div class="field"></div>
+        <div class="field"></div>
+        <div class="field"></div>
+      </div>
+      <div class="controlls">
+        <button class="reset">New Game</button>
+        <select class="mode">
+          <option value="P. v. P.">P. v. P.</option>
+          <option value="P. v. AI">P. v. AI</option>
+          <option value="AI v. P">AI v. P</option>
+          <option value="AI v. AI">AI v. AI</option>
+        </select>
+        <input class="waitTime" type="number" min = "0" value="500" placeholder="AI wait Time"></input>
+        
+      </div>
+    </div>
+  </body>
+</html>

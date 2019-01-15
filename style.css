@@ -1,0 +1,118 @@
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.grid {
+  display: grid;
+  width: 60vmin;
+  height: 60vmin;
+  background-color: grey;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 1vmin;
+}
+
+.field {
+  position: relative;
+  background-color: darkgray;
+  display: block;
+  border-style: solid;
+  border-width: 1px;
+  border-color: transparent;
+}
+
+.field:hover {
+  border-style: solid;
+  border-color: darkcyan;
+  border-width: 1px;
+  opacity: 0.5;
+}
+
+.field--circle::after {
+  content: "";
+  position: absolute;
+  border-color: blue;
+  border-style: solid;
+  border-radius: 50%;
+  border-width: 5px;
+  height: 50%;
+  width: 50%;
+  top: calc(25% - 5px);
+  left: calc(25% - 5px);
+  transition: transform .5s ease-in-out;
+}
+
+.field--cross::after {
+  --rotation: 45deg;
+  content: "";
+  height: 50%;
+  border-style: solid;
+  border-color: red;
+  border-width: 3px;
+  position: absolute;
+  top: 25%;
+  left: calc(50% - 3px);
+  transform: rotate(var(--rotation));
+  transition: transform .5s ease-in-out;
+}
+
+.field--cross::before {
+  --rotation: -45deg;
+  content: "";
+  height: 50%;
+  border-style: solid;
+  border-color: red;
+  border-width: 3px;
+  position: absolute;
+  top: 25%;
+  left: calc(50% - 3px);
+  transform: rotate(var(--rotation));
+  transition: transform .5s ease-in-out;
+}
+
+.field.field--won {
+  background-color: dimgray;
+}
+
+.field--won::after {
+  transform: rotate(var(--rotation, 0)) scale(1.4);
+}
+
+.field--won::before {
+  transform: rotate(var(--rotation, 0)) scale(1.4);
+}
+
+.tic-tac-toe {
+  background-color: gray;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 2vmin;
+}
+
+.prompt {
+  margin: 10px;
+  color: white;
+  text-align: center;
+  font-size: 10vmin;
+}
+
+.controlls{
+    margin-top: 1vmin;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.waitTime{
+    width: 18vmin;
+    text-align: center;
+}
